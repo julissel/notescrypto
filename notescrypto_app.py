@@ -55,4 +55,28 @@ def make_shell_context():
     return {'db': db, 'Note': Note}
 
 #route handlers
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    form = TextForm()
+    if form.validate_on_submit():
+        key = Fernet.generate_key()
+        str_key = key.decode('ascii')
+        f = Fernet(key)
+        bin_string = form.text.data.encode('utf-8')
+        cipher_text = f.encrypt(bin_string)
+        str_cipher_text = cipher_text.decode('ascii')
+        rnumber = random.randint(1000000, 9999999)
+        while True:
+            n = Note.query.filter_by(rnumber=rnumber).first()
+            if n:
+                rnumber = random.randint(1000000, 9999999)
+                continue
+            break
+        cipher_note = Note(number=rnumber, cryptotext=str_cipher_text)
+        link = f'{app.config["SITE_URL"]}/{rnumber}/{str_key}'
+        db.session.add(cipher_note)
+        db.session.commit()
+        return  render_template('complete.html', link=link)
+    return render_template('index.html', form=form)
 
+# @app.route('/<rnumber>/<str_key>')
