@@ -1,0 +1,8 @@
+cryptography
+Flask
+Flask-Migrate
+Flask-SQLAlchemy
+Flask-WTF
+Flask-Bootstrap
+Flask-SSLify
+wtforms
