@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}notescrypto{% endblock %}
+
+{% block head %}
+{{super()}}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{% endblock %}
+
+{% block content %}
+
+<h2>notescrypto - encrypted notes</h2>
+<hr>
+{{ wtf.quick_form(form) }}
+
+{% endblock %}

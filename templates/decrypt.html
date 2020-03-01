@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'bootstrap/base.html' %}
 
-</body>
-</html>
+{% block title %}notescrypto{% endblock %}
+
+{% block head %}
+{{super()}}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{% endblock %}
+
+{% block content %}
+
+<h2>notescrypto - encrypted notes</h2>
+<hr>
+<b>Message text:</b>
+
+<br><br>
+{{ text }}
+<br><br>
+<a href="{{ url_for('index') }}">
+  <input class="btn btn-default" type="submit" value="Create new message :) ">
+</a>
+
+{% endblock %}

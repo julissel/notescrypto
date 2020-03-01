@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'bootstrap/base.html' %}
 
-</body>
-</html>
+{% block title %}notescrypto{% endblock %}
+
+{% block head %}
+{{super()}}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{% endblock %}
+
+{% block content %}
+
+<h2>notescrypto - encrypted notes</h2>
+<hr>
+<b>Click the decrypt button to see the message.<br>
+After decryption, the message will be deleted from the site.</b>
+<br>
+<br>
+<a href="{{ link }}">
+  <input class="btn btn-default" type="submit" value="Decrypt :) ">
+</a>
+
+{% endblock %}
