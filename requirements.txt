@@ -6,3 +6,5 @@ Flask-WTF
 Flask-Bootstrap
 Flask-SSLify
 wtforms
+gunicorn
+psycopg2-binary
