@@ -1,3 +1,4 @@
+werkzeug
 cryptography
 Flask
 Flask-Migrate
@@ -7,4 +8,4 @@ Flask-Bootstrap
 Flask-SSLify
 wtforms
 gunicorn
-psycopg2-binary
+psycopg2-binarygit

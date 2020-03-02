@@ -9,7 +9,7 @@ from flask_bootstrap import Bootstrap
 from flask_sslify import SSLify
 from wtforms import TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Length
-#from werkzeug.contrib.fixers import ProxyFix
+from werkzeug.contrib.fixers import ProxyFix
 
 
 class Config():
@@ -29,7 +29,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 bootstrap = Bootstrap(app)
 sslify = SSLify(app)
-#app.wsgi_app = ProxyFix(app.wsgi_app)
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 
 class Note(db.Model):
