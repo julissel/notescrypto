@@ -1,1 +1,1 @@
-web: flask db upgrade; gunicorn notescrypto:app
+web: flask db upgrade; gunicorn notescrypto_app:app
