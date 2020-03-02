@@ -9,7 +9,7 @@ from flask_bootstrap import Bootstrap
 from flask_sslify import SSLify
 from wtforms import TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Length
-from werkzeug.contrib.fixers import ProxyFix
+#from werkzeug.contrib.fixers import ProxyFix
 
 
 class Config():
@@ -29,7 +29,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 bootstrap = Bootstrap(app)
 sslify = SSLify(app)
-app.wsgi_app = ProxyFix(app.wsgi_app)
+#app.wsgi_app = ProxyFix(app.wsgi_app)
 
 
 class Note(db.Model):
@@ -66,7 +66,7 @@ def index():
         f = Fernet(key)
         bin_string = form.text.data.encode('utf-8')
         cipher_text = f.encrypt(bin_string)
-        str_cipher_text = cipher_text.decode('ascii')
+        str_cipher_text = cipherext.decode('ascii')
         rnumber = random.randint(1000000, 9999999)
         while True:
             n = Note.query.filter_by(number=rnumber).first()
