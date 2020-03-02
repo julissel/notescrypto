@@ -16,7 +16,7 @@ class Config():
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    # SITE_URL = 'https://notescrypto.herokuapp.com
+    SITE_URL = 'https://notescrypto.herokuapp.com'
 
 
 # Object of Flask-class with settings of Config-class
