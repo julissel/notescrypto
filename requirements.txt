@@ -1,3 +1,4 @@
+werkzeug
 cryptography
 Flask
 Flask-Migrate
