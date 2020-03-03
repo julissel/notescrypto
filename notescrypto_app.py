@@ -10,6 +10,7 @@ from flask_sslify import SSLify
 from wtforms import TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Length
 from werkzeug.contrib.fixers import ProxyFix
+from cachelib.file import FileSystemCache
 
 
 class Config():
