@@ -1,4 +1,5 @@
-werkzeug
+werkzeug == 0.16.0
+wtforms
 cryptography
 Flask
 Flask-Migrate
@@ -6,6 +7,5 @@ Flask-SQLAlchemy
 Flask-WTF
 Flask-Bootstrap
 Flask-SSLify
-wtforms
 gunicorn
 psycopg2-binary
